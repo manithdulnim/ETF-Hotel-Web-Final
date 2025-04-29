@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Yarn Hotel - Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Your custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">The Yarn Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="rooms.html">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resturant.html">Restaurant</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Spa.html">Spa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h1 class="mb-4 text-center">Experience unparalleled comfort in our meticulously designed accommodations</h1>
+
+        <!-- Standard Room -->
+        <div class="room-card mb-5 p-4 border rounded shadow-sm">
+            <h3>Standard Room</h3>
+            <p class="text-muted">Perfect for solo travelers or couples</p>
+            <p>
+                Our Standard Rooms offer a comfortable retreat with all the essential amenities for a pleasant stay. Featuring a cozy queen-size bed and modern furnishings.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <span class="fs-4 text-primary fw-bold">From $129/night</span>
+                <button 
+                    class="btn btn-primary book-now-btn"
+                    data-room-id="standard"
+                    data-room-type="Standard Room"
+                    data-room-price="129">
+                    Book Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Deluxe Room -->
+        <div class="room-card mb-5 p-4 border rounded shadow-sm">
+            <h3>Deluxe Room</h3>
+            <p class="text-muted">Spacious comfort with premium amenities</p>
+            <p>
+                Our Deluxe Rooms provide extra space and upgraded amenities for those seeking additional comfort. Enjoy a king-size bed, sitting area, and enhanced views.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <span class="fs-4 text-primary fw-bold">From $199/night</span>
+                <button 
+                    class="btn btn-primary book-now-btn"
+                    data-room-id="deluxe"
+                    data-room-type="Deluxe Room"
+                    data-room-price="199">
+                    Book Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Executive Suite -->
+        <div class="room-card mb-5 p-4 border rounded shadow-sm">
+            <h3>Executive Suite</h3>
+            <p class="text-muted">Luxury living for business or leisure</p>
+            <p>
+                The Executive Suite offers separate living and sleeping areas, perfect for extended stays or business travelers needing extra space to work and relax.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <span class="fs-4 text-primary fw-bold">From $299/night</span>
+                <button 
+                    class="btn btn-primary book-now-btn"
+                    data-room-id="executive"
+                    data-room-type="Executive Suite"
+                    data-room-price="299">
+                    Book Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Presidential Suite -->
+        <div class="room-card mb-5 p-4 border rounded shadow-sm">
+            <h3>Presidential Suite</h3>
+            <p class="text-muted">The ultimate in luxury and space</p>
+            <p>
+                Our magnificent Presidential Suite spans the entire top floor, offering breathtaking panoramic views, a grand living room, dining area, and master bedroom with a luxurious bathroom.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <span class="fs-4 text-primary fw-bold">From $899/night</span>
+                <button 
+                    class="btn btn-primary book-now-btn"
+                    data-room-id="presidential"
+                    data-room-type="Presidential Suite"
+                    data-room-price="899">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Booking Modal (for JS integration) -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="bookingForm">
+            <div class="modal-header">
+              <h5 class="modal-title" id="bookingModalLabel">Book Your Stay</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="roomType" class="form-label">Room Type</label>
+                <input type="text" class="form-control" id="roomType" name="roomType" readonly>
+              </div>
+              <div class="mb-3">
+                <label for="roomPrice" class="form-label">Price per Night</label>
+                <input type="text" class="form-control" id="roomPrice" name="roomPrice" readonly>
+              </div>
+              <div class="mb-3">
+                <label for="guestName" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="guestName" name="guestName" required>
+              </div>
+              <div class="mb-3">
+                <label for="checkIn" class="form-label">Check-in Date</label>
+                <input type="date" class="form-control" id="checkIn" name="checkIn" required>
+              </div>
+              <div class="mb-3">
+                <label for="checkOut" class="form-label">Check-out Date</label>
+                <input type="date" class="form-control" id="checkOut" name="checkOut" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Your custom JS -->
+    <script src="js/script.js"></script>
+    <script>
+      // Example JS for opening the modal and filling in room info
+      $(document).ready(function() {
+        $('.book-now-btn').on('click', function() {
+          $('#roomType').val($(this).data('room-type'));
+          $('#roomPrice').val('$' + $(this).data('room-price'));
+          $('#bookingModal').modal('show');
+        });
+      });
+    </script>
+</body>
+</html>
